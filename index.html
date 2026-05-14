@@ -40,12 +40,16 @@
   </header>
 
   <main>
-    <section class="hero section-gap">
+    <section class="hero section-gap" id="about">
       <div class="container hero-grid">
         <div class="hero-content reveal">
           <span class="eyebrow">Advanced plastic, cosmetic & reconstructive care</span>
           <h1>Modern surgical care with confidence, safety and natural-looking results.</h1>
           <p class="hero-text">Consult Dr. Gouranga Dutta for personalised plastic, cosmetic, reconstructive and aesthetic surgery guidance. A clean patient-first consultation experience with easy WhatsApp appointment support.</p>
+          <div class="hero-about">
+            <strong>About Dr. Gouranga Dutta</strong>
+            <p>Plastic, cosmetic and reconstructive surgeon focused on ethical consultation, realistic expectations, patient comfort and procedure-specific planning.</p>
+          </div>
           <div class="hero-actions">
             <a class="btn" href="https://wa.me/919903035717?text=Hello%20Dr.%20Gouranga%20Dutta%20team%2C%20I%20want%20to%20book%20an%20appointment.%0AName%3A%0AConcern%3A%0APreferred%20Date%3A" target="_blank" rel="noopener">Book on WhatsApp</a>
             <a class="btn btn-light" href="#services">View Specializations</a>
@@ -85,29 +89,6 @@
       </div>
     </section>
 
-    <section class="section-gap" id="about">
-      <div class="container split-grid">
-        <div class="image-panel reveal">
-          <img src="assets/doctor-profile.jpg" alt="Dr. Gouranga Dutta" loading="lazy" />
-          <div class="floating-badge">
-            <strong>Plastic Surgery Expertise</strong>
-            <span>Cosmetic, reconstructive and aesthetic care</span>
-          </div>
-        </div>
-        <div class="content reveal delay-1">
-          <span class="eyebrow">About Doctor</span>
-          <h2>Dr. Gouranga Dutta</h2>
-          <p>Dr. Gouranga Dutta is a plastic, cosmetic and reconstructive surgeon with strong clinical training and academic experience. The practice focuses on ethical consultation, realistic expectations, patient comfort and procedure-specific planning.</p>
-          <div class="check-list">
-            <p>✓ MBBS, MS and MCh Plastic Surgery background</p>
-            <p>✓ Cosmetic, reconstructive and plastic surgery care</p>
-            <p>✓ Clear consultation and personalised treatment planning</p>
-            <p>✓ WhatsApp-based appointment support</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section-gap soft-bg" id="services">
       <div class="container">
         <div class="section-heading reveal">
@@ -144,31 +125,53 @@
           <h2>Patient transformation gallery</h2>
           <p>Use the comparison sliders below to view before and after results. Individual results may vary depending on condition, procedure and recovery.</p>
         </div>
-        <div class="result-pair-grid">
-          <div class="compare-card reveal">
-            <div class="compare" id="compare1" style="--position:50%">
-              <img class="compare-img compare-after" src="assets/result-20260414-xkx-wa0041.jpg" alt="After treatment set 1" />
-              <div class="compare-overlay" id="compareOverlay1">
-                <img class="compare-img compare-before" src="assets/result-20260414-0prr-wa0042.jpg" alt="Before treatment set 1" />
-              </div>
-              <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay1" aria-label="Before and after comparison slider 1" />
-              <div class="compare-handle" aria-hidden="true"><span></span></div>
-              <div class="compare-label before-label">Before</div>
-              <div class="compare-label after-label">After</div>
+        <div class="result-slider reveal" data-result-slider>
+          <div class="result-slider-header">
+            <div>
+              <span class="result-count"><span data-result-current>01</span> / <span data-result-total>02</span></span>
+              <h3>Case comparison</h3>
+            </div>
+            <div class="result-controls">
+              <button class="result-nav" type="button" data-result-prev aria-label="Previous before and after result">‹</button>
+              <button class="result-nav" type="button" data-result-next aria-label="Next before and after result">›</button>
             </div>
           </div>
-          <div class="compare-card reveal delay-1">
-            <div class="compare" id="compare2" style="--position:50%">
-              <img class="compare-img compare-after" src="assets/result-20260310-after.jpg" alt="After treatment set 2" />
-              <div class="compare-overlay" id="compareOverlay2">
-                <img class="compare-img compare-before" src="assets/result-20260310-before.jpg" alt="Before treatment set 2" />
-              </div>
-              <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay2" aria-label="Before and after comparison slider 2" />
-              <div class="compare-handle" aria-hidden="true"><span></span></div>
-              <div class="compare-label before-label">Before</div>
-              <div class="compare-label after-label">After</div>
+
+          <div class="result-viewport">
+            <div class="result-track">
+              <article class="result-slide" aria-label="Before and after result case 1">
+                <div class="compare-card">
+                  <div class="compare" id="compare1" style="--position:50%">
+                    <img class="compare-img compare-after" src="assets/result-20260414-xkx-wa0041.jpg" alt="After treatment set 1" />
+                    <div class="compare-overlay" id="compareOverlay1">
+                      <img class="compare-img compare-before" src="assets/result-20260414-0prr-wa0042.jpg" alt="Before treatment set 1" />
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay1" aria-label="Before and after comparison slider 1" />
+                    <div class="compare-handle" aria-hidden="true"><span></span></div>
+                    <div class="compare-label before-label">Before</div>
+                    <div class="compare-label after-label">After</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="result-slide" aria-label="Before and after result case 2">
+                <div class="compare-card">
+                  <div class="compare" id="compare2" style="--position:50%">
+                    <img class="compare-img compare-after" src="assets/result-20260310-after.jpg" alt="After treatment set 2" />
+                    <div class="compare-overlay" id="compareOverlay2">
+                      <img class="compare-img compare-before" src="assets/result-20260310-before.jpg" alt="Before treatment set 2" />
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay2" aria-label="Before and after comparison slider 2" />
+                    <div class="compare-handle" aria-hidden="true"><span></span></div>
+                    <div class="compare-label before-label">Before</div>
+                    <div class="compare-label after-label">After</div>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
+
+          <div class="result-dots" aria-label="Before and after result pagination"></div>
         </div>
       </div>
     </section>
@@ -267,7 +270,9 @@
     <div class="container footer-grid">
       <div>
         <a class="brand" href="#top">
-          <span class="brand-mark">GD</span>
+          <span class="footer-doctor-avatar">
+            <img src="assets/doctor-profile.jpg" alt="Dr. Gouranga Dutta" loading="lazy" />
+          </span>
           <span><strong>Dr. Gouranga Dutta</strong><small>Plastic & Cosmetic Surgeon</small></span>
         </a>
         <p>Modern responsive website for plastic, cosmetic and reconstructive surgery appointment enquiries.</p>
@@ -288,7 +293,11 @@
     <div class="container copyright">© <span id="year"></span> Dr. Gouranga Dutta. All rights reserved.</div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/919903035717?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20with%20Dr.%20Gouranga%20Dutta." target="_blank" rel="noopener" aria-label="WhatsApp appointment">☘</a>
+  <a class="floating-whatsapp" href="https://wa.me/919903035717?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20with%20Dr.%20Gouranga%20Dutta." target="_blank" rel="noopener" aria-label="WhatsApp appointment">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M16 3.5A12.4 12.4 0 0 0 5.4 22.3L4 28l5.9-1.5A12.4 12.4 0 1 0 16 3.5Zm0 22.8c-2 0-4-.6-5.7-1.7l-.4-.2-3.5.9.9-3.4-.2-.4A10.3 10.3 0 1 1 16 26.3Zm5.9-7.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.7-2.1-1.9-2.4-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.5 3.6c.2.2 2.5 3.8 6.1 5.3.9.4 1.5.6 2.1.8.9.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.2-.2-.4-.3-.7-.5Z" />
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>

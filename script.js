@@ -22,6 +22,47 @@ ranges.forEach(range => {
   update();
 });
 
+const resultSlider = document.querySelector('[data-result-slider]');
+if(resultSlider){
+  const track = resultSlider.querySelector('.result-track');
+  const slides = [...resultSlider.querySelectorAll('.result-slide')];
+  const prevButton = resultSlider.querySelector('[data-result-prev]');
+  const nextButton = resultSlider.querySelector('[data-result-next]');
+  const currentLabel = resultSlider.querySelector('[data-result-current]');
+  const totalLabel = resultSlider.querySelector('[data-result-total]');
+  const dotsWrap = resultSlider.querySelector('.result-dots');
+  let currentResult = 0;
+
+  const formatCount = value => String(value).padStart(2, '0');
+
+  if(totalLabel) totalLabel.textContent = formatCount(slides.length);
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Go to result case ${index + 1}`);
+    dot.addEventListener('click', () => showResult(index));
+    dotsWrap?.appendChild(dot);
+  });
+
+  function showResult(index){
+    if(!slides.length) return;
+    currentResult = (index + slides.length) % slides.length;
+    if(track) track.style.transform = `translateX(-${currentResult * 100}%)`;
+    slides.forEach((slide, slideIndex) => {
+      slide.setAttribute('aria-hidden', String(slideIndex !== currentResult));
+    });
+    dotsWrap?.querySelectorAll('button').forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === currentResult);
+    });
+    if(currentLabel) currentLabel.textContent = formatCount(currentResult + 1);
+  }
+
+  prevButton?.addEventListener('click', () => showResult(currentResult - 1));
+  nextButton?.addEventListener('click', () => showResult(currentResult + 1));
+  showResult(0);
+}
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
