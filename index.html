@@ -57,51 +57,18 @@
           </div>
         </div>
 
-        <div class="hero-card reveal delay-1">
-          <div class="slider" aria-label="Doctor and patient transformation slider">
-            <div class="slide active">
-              <img src="assets/doctor-profile.jpg" alt="Dr. Gouranga Dutta profile image" loading="eager" />
-              <div class="slide-caption">
-                <span>01</span>
-                <h3>Dr. Gouranga Dutta</h3>
-                <p>Plastic, cosmetic and reconstructive surgery consultation with personalised guidance.</p>
-              </div>
+        <div class="hero-card doctor-hero-card reveal delay-1">
+          <div class="doctor-photo-frame">
+            <img src="assets/doctor-profile.jpg" alt="Dr. Gouranga Dutta profile image" loading="eager" />
+            <div class="doctor-card-overlay">
+              <span>Plastic, Cosmetic & Reconstructive Surgeon</span>
+              <h3>Dr. Gouranga Dutta</h3>
             </div>
-            <div class="slide">
-              <img src="assets/result-20260414-before.jpg" alt="Before result image set 1" loading="lazy" />
-              <div class="slide-caption">
-                <span>02</span>
-                <h3>Before Treatment</h3>
-                <p>Patient transformation case image - before view.</p>
-              </div>
-            </div>
-            <div class="slide">
-              <img src="assets/result-20260414-after.jpg" alt="After result image set 1" loading="lazy" />
-              <div class="slide-caption">
-                <span>03</span>
-                <h3>After Treatment</h3>
-                <p>Patient transformation case image - after view.</p>
-              </div>
-            </div>
-            <div class="slide">
-              <img src="assets/result-20260310-before.jpg" alt="Before result image set 2" loading="lazy" />
-              <div class="slide-caption">
-                <span>04</span>
-                <h3>Before Treatment</h3>
-                <p>Second patient transformation case image - before view.</p>
-              </div>
-            </div>
-            <div class="slide">
-              <img src="assets/result-20260310-after.jpg" alt="After result image set 2" loading="lazy" />
-              <div class="slide-caption">
-                <span>05</span>
-                <h3>After Treatment</h3>
-                <p>Second patient transformation case image - after view.</p>
-              </div>
-            </div>
-            <button class="slider-btn prev" aria-label="Previous slide">‹</button>
-            <button class="slider-btn next" aria-label="Next slide">›</button>
-            <div class="slider-dots" aria-label="Slider pagination"></div>
+          </div>
+          <div class="doctor-card-meta" aria-label="Doctor credentials">
+            <div><strong>MBBS</strong><span>Medical foundation</span></div>
+            <div><strong>MS</strong><span>Surgical training</span></div>
+            <div><strong>MCh</strong><span>Plastic surgery</span></div>
           </div>
         </div>
       </div>
@@ -179,23 +146,25 @@
         </div>
         <div class="result-pair-grid">
           <div class="compare-card reveal">
-            <div class="compare" id="compare1">
-              <img class="compare-img base" src="assets/result-20260414-0prr-wa0042.jpg" alt="Before treatment set 1" />
+            <div class="compare" id="compare1" style="--position:50%">
+              <img class="compare-img compare-after" src="assets/result-20260414-xkx-wa0041.jpg" alt="After treatment set 1" />
               <div class="compare-overlay" id="compareOverlay1">
-                <img class="compare-img" src="assets/result-20260414-xkx-wa0041.jpg" alt="After treatment set 1" />
+                <img class="compare-img compare-before" src="assets/result-20260414-0prr-wa0042.jpg" alt="Before treatment set 1" />
               </div>
               <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay1" aria-label="Before and after comparison slider 1" />
+              <div class="compare-handle" aria-hidden="true"><span></span></div>
               <div class="compare-label before-label">Before</div>
               <div class="compare-label after-label">After</div>
             </div>
           </div>
           <div class="compare-card reveal delay-1">
-            <div class="compare" id="compare2">
-              <img class="compare-img base" src="assets/result-20260310-after.jpg" alt="Before treatment set 2" />
+            <div class="compare" id="compare2" style="--position:50%">
+              <img class="compare-img compare-after" src="assets/result-20260310-after.jpg" alt="After treatment set 2" />
               <div class="compare-overlay" id="compareOverlay2">
-                <img class="compare-img" src="assets/result-20260310-before.jpg" alt="After treatment set 2" />
+                <img class="compare-img compare-before" src="assets/result-20260310-before.jpg" alt="Before treatment set 2" />
               </div>
               <input type="range" min="0" max="100" value="50" class="compare-range" data-overlay="compareOverlay2" aria-label="Before and after comparison slider 2" />
+              <div class="compare-handle" aria-hidden="true"><span></span></div>
               <div class="compare-label before-label">Before</div>
               <div class="compare-label after-label">After</div>
             </div>

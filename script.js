@@ -6,34 +6,18 @@ menuToggle?.addEventListener('click', () => {
 });
 navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
 
-const slides = [...document.querySelectorAll('.slide')];
-const dotsWrap = document.querySelector('.slider-dots');
-let currentSlide = 0;
-let sliderTimer;
-function showSlide(index){
-  if(!slides.length) return;
-  currentSlide = (index + slides.length) % slides.length;
-  slides.forEach((s,i)=>s.classList.toggle('active', i===currentSlide));
-  dotsWrap?.querySelectorAll('button').forEach((d,i)=>d.classList.toggle('active', i===currentSlide));
-  clearInterval(sliderTimer);
-  sliderTimer = setInterval(()=>showSlide(currentSlide+1), 6000);
-}
-slides.forEach((_,i)=>{
-  const dot=document.createElement('button');
-  dot.setAttribute('aria-label', `Go to slide ${i+1}`);
-  dot.addEventListener('click',()=>showSlide(i));
-  dotsWrap?.appendChild(dot);
-});
-document.querySelector('.prev')?.addEventListener('click',()=>showSlide(currentSlide-1));
-document.querySelector('.next')?.addEventListener('click',()=>showSlide(currentSlide+1));
-showSlide(0);
-
 // Multiple before/after comparison sliders
 const ranges = document.querySelectorAll('.compare-range');
 ranges.forEach(range => {
   const overlayId = range.getAttribute('data-overlay') || 'compareOverlay';
   const overlay = document.getElementById(overlayId);
-  const update = () => { if(overlay) overlay.style.width = `${range.value}%`; };
+  const compare = range.closest('.compare');
+  const update = () => {
+    const position = `${range.value}%`;
+    compare?.style.setProperty('--position', position);
+    range.setAttribute('aria-valuenow', range.value);
+    if(overlay) overlay.style.clipPath = `inset(0 calc(100% - ${position}) 0 0)`;
+  };
   range.addEventListener('input', update);
   update();
 });
